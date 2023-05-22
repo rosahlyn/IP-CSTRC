@@ -8,22 +8,26 @@ contendo elementos inteiros (N será lido);
 import random
 
 n = int(input('Digite um numero: '))
+
 lin = n
 col = n   
+
 m = []
-c = []
-for i in range(lin):
+d = []
+
+for i in range(lin):# definir o tamanho da matriz
     m.append([0]*col)
 
-for i in range(lin):
+for i in range(lin):# colocar os valores na matriz
     for j in range(col):
-        m[i][j] = random.randint(1,9)
-        if i == j:
-            c.append(m[i][j])
+        m[i][j] = random.randint(1,9)# vai gerar aleatoriamente numeros p matriz
+        if i == j:# se a linha e coluna for igual adc a diagonal
+            d.append(m[i][j])
 
 print('Matriz N: ')
 for i in range(lin):
     for j in range(col):
         print(f'{m[i][j]: 3}', end=' ')
     print()
-print(c)
+print(d)
+
