@@ -1,0 +1,29 @@
+'''2. Escreva um programa que:
+• Leia (ou gere aleatoriamente) uma matriz quadrada de ordem N 
+contendo elementos inteiros (N será lido);
+• Exiba a matriz lida (no formato de matriz);
+• Exiba os elementos da diagonal principal, isto é, os elementos
+ onde I = J.'''
+
+import random
+
+n = int(input('Digite um numero: '))
+lin = n
+col = n   
+m = []
+c = []
+for i in range(lin):
+    m.append([0]*col)
+
+for i in range(lin):
+    for j in range(col):
+        m[i][j] = random.randint(1,9)
+        if i == j:
+            c.append(m[i][j])
+
+print('Matriz N: ')
+for i in range(lin):
+    for j in range(col):
+        print(f'{m[i][j]: 3}', end=' ')
+    print()
+print(c)
